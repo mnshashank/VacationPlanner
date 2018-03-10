@@ -6,7 +6,7 @@ const style = {
 };
 const Button = (props) => (
     <div>
-        <RaisedButton label={props.buttonText} primary={true} style={style} />
+        <RaisedButton disabled = {props.disabled} label={props.buttonText} primary={true} style={style} onClick = {props.buttonClicked}/>
     </div>
 );
 

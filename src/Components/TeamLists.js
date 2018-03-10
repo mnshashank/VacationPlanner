@@ -16,7 +16,7 @@ export default class TeamLists extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("http://127.0.0.1:3000/vacations/team/copilot")
+        axios.get("http://127.0.0.1:3000/vacations/team/" + this.props.teamName)
             .then((response) => {
                 console.log(response.data)
                 this.setState({ vacations: response.data });
@@ -35,14 +35,24 @@ export default class TeamLists extends React.Component {
                         indVacation={individualVacation} />
                 });
         }
+        const style = {
+            marginLeft: "20%",
+            marginRight: "20%",
+            marginTop: "10%",
+            padding: "8px",
+            border: "1px solid black"
+        };
 
         return (
-            <List>
-                <Divider inset={false} />
-                <Subheader>Vacations List</Subheader>
-                <Divider inset={false} />
-                {displayVacationData}
-            </List>
+            <div>
+                <List style={style}>
+                    <Divider inset={false} />
+                    <Subheader>Vacations List</Subheader>
+                    <Divider inset={false} />
+                    {displayVacationData}
+                </List>
+            </div>
+
         )
 
     }

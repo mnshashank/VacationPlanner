@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Button from './MaterialComponents/Button';
-import Text from './MaterialComponents/Text';
 import TeamLists from './Components/TeamLists';
+import EmployeeVacations from './Components/EmployeeVacations';
+import EntryPage from './Components/EntryPage';
+import { Switch, Route } from 'react-router-dom'
 
-class App extends Component {
+
+class App extends React.Component {
+
   render() {
     return (
       <div>
-        
-        <MuiThemeProvider>
-          <TeamLists />
-          
-        </MuiThemeProvider>
+          <EntryPage />
       </div>
     );
   }
 }
 
 export default App;
-
-
-
-{/* <Button buttonText="See Vacations"/>
-          <Button buttonText="View Vacations"/>
-          <Text hintText="I332376" floatingLabel="Employee Number" />
-          <DropdownList /> */}
